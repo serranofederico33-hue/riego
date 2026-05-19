@@ -22,7 +22,7 @@
     --bg3: #21262d;
     --border: #30363d;
     --col-pago: #3fb950;
-    --col-zute: #58a6ff;
+    --col-zute: #f97316;
     --col-beber: #e3b341;
     --col-active: #f78166;
     --text: #e6edf3;
@@ -275,14 +275,14 @@
     white-space: nowrap;
   }
   .acequia-toggle.on {
-    border-color: #38bdf8;
-    color: #38bdf8;
+    border-color: #1d4ed8;
+    color: #1d4ed8;
     background: rgba(56,189,248,0.1);
   }
   .acequia-toggle:active { transform: scale(0.96); }
   .acequia-line-dot {
     width: 18px; height: 3px;
-    background: #38bdf8;
+    background: #1d4ed8;
     border-radius: 2px;
     flex-shrink: 0;
   }
@@ -414,7 +414,7 @@ function getColor(r, active) {
   if (active) return '#f78166';
   if (isWatering(r)) return '#f78166';
   if (r.ramal === 'Pago') return '#3fb950';
-  if (r.ramal === 'Zute') return '#58a6ff';
+  if (r.ramal === 'Zute') return '#f97316';
   return '#e3b341';
 }
 
@@ -605,9 +605,9 @@ let acequiasVisible = true;
 
 // Colors per ramal - match the blue-ish tones from the KMZ
 const ACEQUIA_COLORS = {
-  'Pago':  '#38bdf8',
-  'Zute':  '#38bdf8',
-  'Beber': '#38bdf8'
+  'Pago':  '#1d4ed8',
+  'Zute':  '#1d4ed8',
+  'Beber': '#1d4ed8'
 };
 
 function renderAcequias() {
@@ -622,7 +622,7 @@ function renderAcequias() {
 
   pool.forEach(a => {
     const layer = L.polyline(a.coords, {
-      color: '#38bdf8',
+      color: '#1d4ed8',
       weight: 2,
       opacity: 0.8,
       dashArray: null
@@ -666,8 +666,8 @@ function locateMe() {
       // Accuracy circle
       locationCircle = L.circle([lat, lng], {
         radius: acc,
-        color: '#58a6ff',
-        fillColor: '#58a6ff',
+        color: '#f97316',
+        fillColor: '#f97316',
         fillOpacity: 0.1,
         weight: 1.5
       }).addTo(map);
@@ -677,7 +677,7 @@ function locateMe() {
         className: '',
         html: `<div style="
           width:16px;height:16px;
-          background:#58a6ff;
+          background:#f97316;
           border:3px solid white;
           border-radius:50%;
           box-shadow:0 2px 8px rgba(0,0,0,0.4);
